@@ -1,21 +1,22 @@
 import React, { Component } from "react";
 
-import  Toolbar  from "../toolbar/Toolbar.js"
+import Toolbar  from "../toolbar/Toolbar.js"
+import DataContainer from "../main/dataContainers/DataContainer.jsx"
 
 export class Main extends Component {
   state = {
     countries: [],
   };
 
-  componentDidMount() {
-    this.allCountriesData();
+  async componentDidMount() {
+    await this.allCountriesData();
   }
 
   render() {
     return (
       <div>
         <Toolbar></Toolbar>
-        {/* <DataContainer></DataContainer> */}
+        <DataContainer countries={this.state.countries}></DataContainer>
       </div>
     );
   }

@@ -36,3 +36,18 @@
     transform: rotate(360deg);
   }
 }
+
+
+
+/* //Project CSS */
+
+.flag-image{
+  width: 100%;
+  object-fit: cover;
+  height: 100%;
+}
+
+.image-container{
+  width: 15vw;
+  height: 10vw;
+}

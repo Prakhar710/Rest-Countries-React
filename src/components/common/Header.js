@@ -6,7 +6,7 @@ export class Header extends Component {
   render() {
     return (
       <header>
-        <Link to="/">
+        <Link to={`/`}>
         <h3>Where in the world?</h3>
         </Link>
         <div>

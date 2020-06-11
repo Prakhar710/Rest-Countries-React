@@ -1,14 +1,13 @@
 import React from "react";
-
 import CountryContainer from "./CountryContainer.jsx";
-import { withRouter } from "react-router";
+import { withRouter } from "react-router-dom";
 
 const DataContainer = (props) => {
 
-  //Redirecting Code
-  const countryData = (e, code) => {
-    code = code.toLowerCase();
-    props.history.push("/country/" + code);
+  const countryData = (e,code) => {
+    code=code.toLowerCase()
+    props.history.push('/country/'+code)
+
   };
 
   return (

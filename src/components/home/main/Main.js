@@ -3,13 +3,15 @@ import React, { Component } from "react";
 import Toolbar  from "../toolbar/Toolbar.js"
 import DataContainer from "../main/dataContainers/DataContainer.jsx"
 
+import {withRouter} from 'react-router-dom'
+
 export class Main extends Component {
   state = {
     countries: [],
   };
 
-  async componentDidMount() {
-    await this.allCountriesData();
+  componentDidMount() {
+    this.allCountriesData();
   }
 
   render() {
@@ -36,4 +38,4 @@ export class Main extends Component {
   };
 }
 
-export default Main;
+export default withRouter(Main)

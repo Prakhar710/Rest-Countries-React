@@ -24,13 +24,13 @@ export class Header extends Component {
     }else{
         this.setState({dark:null})
       }
-      console.log(this.state.dark)
+      // console.log(this.state.dark)
     }
   }
 
   render() {
     return (
-      <header className="d-flex">
+      <header className="d-flex container justify-content-between">
         <Link to={`/`}>
         <h3>Where in the world?</h3>
         </Link>

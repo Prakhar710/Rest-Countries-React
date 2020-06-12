@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { withRouter } from "react-router";
 import BorderButton from "./BorderButton.jsx";
+import { Link } from "react-router-dom";
 export class Detail extends Component {
   state = {
     country: [],
@@ -70,10 +71,6 @@ export class Detail extends Component {
       });
   };
 
-  data=(
-    <div>Hello</div>
-  )
-
   componentDidMount() {
     this.countryData();
   }
@@ -85,19 +82,27 @@ export class Detail extends Component {
   render() {
     let { country } = this.state;
     return (
-      <div>
-        <div>Back</div>
+      <div className="container">
         <div>
+          <Link to="/">
+            <button>Back</button>
+          </Link>
+        </div>
+        <div className="d-flex justify-content-between">
           <div>
-            <div>
-              <img src={country.flag} alt={country.alpha3Code} />
+            <div className="image-container-details">
+              <img
+                src={country.flag}
+                alt={country.alpha3Code}
+                className="flag-image"
+              />
             </div>
           </div>
-          <div>
-            <div>
+          <div className="d-flex-column">
+            <div className="p-2">
               <h5>{country.name}</h5>
             </div>
-            <div className="d-flex">
+            <div className="d-flex justify-content-between">
               <div>
                 <p>
                   <b>Native Name:</b>&nbsp;{country.nativeName}
@@ -152,16 +157,10 @@ export class Detail extends Component {
                 </p>
               </div>
             </div>
-            if({this.state.borders.length!==0})
-            {
-              <div>
-                <b>Border Countries:</b>&nbsp;
-                <BorderButton borders={this.state.borders} />
-              </div>
-            }
-          </div>
-          <div>
-            {this.data}
+            <div>
+              <b>Border Countries:</b>&nbsp;
+              <BorderButton borders={this.state.borders} />
+            </div>
           </div>
         </div>
       </div>

@@ -1,48 +1,57 @@
 import React, { Component } from "react";
 import { withRouter } from "react-router";
- import BorderButton from "./BorderButton.jsx"
+import BorderButton from "./BorderButton.jsx";
 export class Detail extends Component {
   state = {
     country: [],
     currencies: [],
-    borders:[],
+    borders: [],
   };
 
   countryData = () => {
-    const { code } = this.props.match.params;
-    const url = `https://restcountries.eu/rest/v2/alpha/${code}`;
+    if (this.props.match.params.code) {
+      // console.log(this.state.country)
+      if (
+        this.state.country.length === 0 ||
+        (this.state.country.length !== 0 &&
+          this.state.country.alpha3Code.toLowerCase() !==
+            this.props.match.params.code)
+      ) {
+        const { code } = this.props.match.params;
+        const url = `https://restcountries.eu/rest/v2/alpha/${code}`;
 
-    fetch(url, {
-      method: "GET",
-    })
-      .then((res) => {
-        return res.json();
-      })
-      .then((data) => {
-        if (data) {
-          this.setState({ country: data });
-          this.setState({ currencies: data.currencies });
-        }
-      })
-      .then(()=>{
-          this.getTheData()
-      })
-      .catch((err) => {
-        throw err;
-      });
+        fetch(url, {
+          method: "GET",
+        })
+          .then((res) => {
+            return res.json();
+          })
+          .then((data) => {
+            if (data) {
+              this.setState({ country: data });
+              this.setState({ currencies: data.currencies });
+            }
+          })
+          .then(() => {
+            this.getTheData();
+          })
+          .catch((err) => {
+            throw err;
+          });
+      }
+    }
   };
 
-  getTheData=()=>{
+  getTheData = () => {
     let { country } = this.state;
     let borderCountriesString = "";
     country.borders.map((border) => {
-      return borderCountriesString = borderCountriesString + border + ";";
+      return (borderCountriesString = borderCountriesString + border + ";");
     });
     if (borderCountriesString) {
       this.fetchBorderCountry(borderCountriesString);
     }
-  }
-
+  };
 
   fetchBorderCountry = (countries) => {
     const url = "https://restcountries.eu/rest/v2/alpha?codes=" + countries;
@@ -61,16 +70,23 @@ export class Detail extends Component {
       });
   };
 
+  data=(
+    <div>Hello</div>
+  )
+
   componentDidMount() {
+    this.countryData();
+  }
+
+  componentDidUpdate() {
     this.countryData();
   }
 
   render() {
     let { country } = this.state;
-    // console.log(country.borders)
     return (
       <div>
-        <div>butttofghjk</div>
+        <div>Back</div>
         <div>
           <div>
             <div>
@@ -136,10 +152,16 @@ export class Detail extends Component {
                 </p>
               </div>
             </div>
-            <div>
+            if({this.state.borders.length!==0})
+            {
+              <div>
                 <b>Border Countries:</b>&nbsp;
-                <BorderButton borders={this.state.borders}/>
-            </div>
+                <BorderButton borders={this.state.borders} />
+              </div>
+            }
+          </div>
+          <div>
+            {this.data}
           </div>
         </div>
       </div>

@@ -5,7 +5,7 @@ import { Filter } from "./Filter.jsx";
 
 const Toolbar = () => {
     return (
-        <div>
+        <div className="d-flex container justify-content-between align-items-center mb-2">
       <Searchbar />
       <Filter />
     </div>

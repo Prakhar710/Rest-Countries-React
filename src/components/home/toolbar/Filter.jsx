@@ -10,7 +10,7 @@ export class Filter extends Component {
     render() {
         return (
             <div>
-                <select onChange={this.selectedValue}>
+                <select onChange={this.selectedValue} className="filter-wrapper cursor">
                 <option defaultValue value="">Filter By Region</option>
                 <option value={'africa'}>Africa</option>
                 <option value={'americas'}>Americas</option>

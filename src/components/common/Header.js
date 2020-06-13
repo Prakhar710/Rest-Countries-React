@@ -21,9 +21,9 @@ const Header = () => {
 
   const ToggleButton = () => {
     if (theme === "light") {
-      return <i className="far fa-moon">Dark Mode</i>;
+      return <i className="far fa-moon">&nbsp;Dark Mode</i>;
     } else {
-      return <i className="far fa-sun">Light Mode</i>;
+      return <i className="far fa-sun">&nbsp;Light Mode</i>;
     }
   };
 
@@ -38,11 +38,11 @@ const Header = () => {
     <ThemeProvider theme={theme === "light" ? lightTheme : darkTheme}>
       <>
         <GlobalStyles />
-        <header className="d-flex container justify-content-between">
-          <Link to={`/`}>
+        <header className="d-flex justify-content-between header align-items-center">
+          <Link to={`/`} style={{textDecoration:'none'}} className="links">
             <h3>Where in the world?</h3>
           </Link>
-          <div onClick={themeSetting}>
+          <div onClick={themeSetting} className="cursor">
             <ToggleButton />
           </div>
         </header>

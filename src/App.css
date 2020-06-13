@@ -55,6 +55,40 @@
   height: 30vw;
 }
 
+/* header section */
+.header {
+  box-shadow: 3px 3px 6px #eee;
+  height: 4rem;
+  padding: 0 3rem;
+}
+
+.search-wrapper {
+  /* border: 1px solid black; */
+  padding: 1%;
+  box-shadow: 2px 5px 4px 2px #f0f0f0;
+  border-radius: 2px;
+  border: none;
+}
+
+.search-bar {
+  border: none;
+  background-color: #fff;
+}
+
+.filter-wrapper {
+  box-shadow: 2px 5px 4px 2px #f0f0f0;
+  border-radius: 2px;
+  border: none;
+  background-color: #fff;
+  width: 15vw;
+  height: 3rem;
+  padding: 1%;
+}
+
+.cursor{
+  cursor: pointer;
+}
+
 /* //Dark Theme
 /* @media (prefers-color-scheme: dark) {
   html,
@@ -109,4 +143,4 @@
   video {
     background-color: transparent !important;
   }
-} */ 
+} */

@@ -7,4 +7,13 @@ export const GlobalStyles = createGlobalStyle`
     font-family: Tahoma, Helvetica, Arial, Roboto, sans-serif;
     transition: all 0.50s linear;
   }
+
+  .links{
+    color: ${({ theme }) => theme.text};
+  }
+
+  .search-wrapper,.search-bar,.filter-wrapper{
+    color: ${({ theme }) => theme.text};
+    background: ${({ theme }) => theme.body};
+  }
   `

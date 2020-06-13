@@ -4,7 +4,7 @@ const CountryContainer = (props) => {
   return (
     <div
       key={props.code}
-      className="w-25 border p-1"
+      className="cursor"
       onClick={(e) => {
         props.countryData(e, props.code);
       }}

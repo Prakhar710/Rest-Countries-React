@@ -11,7 +11,7 @@ const DataContainer = (props) => {
   };
 
   return (
-    <div className="container d-flex flex-wrap align-self-stretch">
+    <div className="container d-flex flex-wrap align-self-stretch justify-content-between mb-4 mt-4 pt-2 pb-2">
       {props.countries.map((country, index) => {
         return (
           <CountryContainer

@@ -11,34 +11,35 @@ export class Detail extends Component {
 
   countryData = () => {
     if (this.props.match.params.code) {
-      // console.log(this.state.country)
-      if (
-        this.state.country.length === 0 ||
-        (this.state.country.length !== 0 &&
-          this.state.country.alpha3Code.toLowerCase() !==
-            this.props.match.params.code)
-      ) {
-        const { code } = this.props.match.params;
-        const url = `https://restcountries.eu/rest/v2/alpha/${code}`;
+      if (this.state.country.status !== 400) {
+        if (
+          this.state.country.length === 0 ||
+          (this.state.country.length !== 0 &&
+            this.state.country.alpha3Code.toLowerCase() !==
+              this.props.match.params.code)
+        ) {
+          const { code } = this.props.match.params;
+          const url = `https://restcountries.eu/rest/v2/alpha/${code}`;
 
-        fetch(url, {
-          method: "GET",
-        })
-          .then((res) => {
-            return res.json();
+          fetch(url, {
+            method: "GET",
           })
-          .then((data) => {
-            if (data) {
-              this.setState({ country: data });
-              this.setState({ currencies: data.currencies });
-            }
-          })
-          .then(() => {
-            this.getTheData();
-          })
-          .catch((err) => {
-            throw err;
-          });
+            .then((res) => {
+              return res.json();
+            })
+            .then((data) => {
+              if (data) {
+                this.setState({ country: data });
+                this.setState({ currencies: data.currencies });
+              }
+            })
+            .then(() => {
+              this.getTheData();
+            })
+            .catch((err) => {
+              throw err;
+            });
+        }
       }
     }
   };
@@ -85,7 +86,7 @@ export class Detail extends Component {
       <div className="container">
         <div>
           <Link to="/">
-            <button>Back</button>
+            <button><i className="fas fa-arrow-left"></i>Back</button>
           </Link>
         </div>
         <div className="d-flex justify-content-between">

@@ -37,21 +37,76 @@
   }
 }
 
-
 /* //Project CSS */
 
-.flag-image{
+.flag-image {
   width: 100%;
   object-fit: cover;
   height: 100%;
 }
 
-.image-container{
+.image-container {
   width: 15vw;
   height: 10vw;
 }
 
-.image-container-details{
+.image-container-details {
   width: 45vw;
   height: 30vw;
 }
+
+/* //Dark Theme
+/* @media (prefers-color-scheme: dark) {
+  html,
+  html * {
+    color: #eeeeee !important;
+    background-color: #292929 !important;
+  }
+
+  img,
+  video {
+    z-index: 1;
+  }
+
+  * {
+    border-color: #555555 !important;
+  }
+
+  cite,
+  cite * {
+    color: #029833 !important;
+  }
+
+  :link,
+  :link * {
+    color: #8db2e5 !important;
+  }
+
+  input,
+  textarea {
+    background-color: #333333 !important;
+  }
+
+  a {
+    background-color: rgba(255, 255, 255, 0.01) !important;
+  }
+
+  :visited,
+  :visited * {
+    color: rgb(211, 138, 138) !important;
+  }
+
+  html,
+  html::before,
+  body,
+  body::before,
+  input,
+  select,
+  button {
+    background-image: none !important;
+  }
+
+  video {
+    background-color: transparent !important;
+  }
+} */ 

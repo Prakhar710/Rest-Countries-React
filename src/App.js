@@ -1,9 +1,8 @@
 import React from "react";
 import "./App.css";
-// import "./components/common/dark_mode.css"
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 
-import { Header } from "./components/common/Header.js";
+import Header from "./components/common/Header.js";
 import { Main } from "./components/home/main/Main.js";
 import { Detail } from "./components/detail/Detail.js";
 import NoPageFound from "./components/common/404.jsx";

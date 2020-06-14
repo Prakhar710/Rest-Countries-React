@@ -21,8 +21,8 @@ const CountryContainer = (props) => {
           className="img-fluid rounded flag-image"
         />
       </div>
-      <div className="country-details p-1">
-        <h5>{props.name}</h5>
+      <div className="country-details">
+        <div style={{fontSize:"1.5vw"}}><b>{props.name}</b></div>
         <div>
             <div>
               <b>Population</b>:&nbsp;{numberWithCommas(props.population)}

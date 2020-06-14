@@ -37,7 +37,7 @@ export class Main extends Component {
 
   render() {
     return (
-      <div>
+      <div className="data-wrapper">
         <Toolbar
           search={this.state.searchString}
           searchFunction={this.searchText}

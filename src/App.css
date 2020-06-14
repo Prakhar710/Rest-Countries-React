@@ -58,7 +58,7 @@
 /* header section */
 .header {
   box-shadow: 2px 2px 4px #eee;
-  /* height: 4rem; */
+  height: 10vh;
   padding: 0 3rem;
 }
 
@@ -105,12 +105,19 @@
   padding: 5%;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 650px) {
 .country-container{
-  width: 45%;
+  width: 25%;
   margin: 2%;
 }
 }
+
+@media only screen and (max-width: 450px) {
+  .country-container{
+    width: 37%;
+    margin: 2%;
+  }
+  }
 
 /* .data-wrapper{
   background-color:hsl(0, 0%, 98%);

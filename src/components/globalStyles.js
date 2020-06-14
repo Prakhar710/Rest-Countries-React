@@ -23,6 +23,12 @@ export const GlobalStyles = createGlobalStyle`
     transition: all 0.50s linear;
   }
 
+  .back-btn,.border-buttons-btn{
+    color:${({ theme }) => theme.body};
+    background: ${({ theme }) => theme.elements};
+    transition: all 0.50s linear;
+  }
+
   `
 
   // font-family: Tahoma, Helvetica, Arial, Roboto, sans-serif;

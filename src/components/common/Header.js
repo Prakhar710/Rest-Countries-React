@@ -10,10 +10,10 @@ const Header = () => {
   const [theme, setTheme] = useState("light");
 
   useEffect(() => {
-    let localTheme = sessionStorage.getItem("theme");
+    let localTheme = localStorage.getItem("theme");
     if (localTheme === null) {
-      sessionStorage.setItem("theme", "light");
-      localTheme = sessionStorage.getItem("theme");
+      localStorage.setItem("theme", "light");
+      localTheme = localStorage.getItem("theme");
     } else {
       localTheme && setTheme(localTheme);
     }
@@ -30,8 +30,8 @@ const Header = () => {
   const themeSetting = () => {
     theme === "light" ? setTheme("dark") : setTheme("light");
     theme === "light"
-      ? sessionStorage.setItem("theme", "dark")
-      : sessionStorage.setItem("theme", "light");
+      ? localStorage.setItem("theme", "dark")
+      : localStorage.setItem("theme", "light");
   };
 
   return (

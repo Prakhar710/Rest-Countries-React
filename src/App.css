@@ -89,6 +89,16 @@
   cursor: pointer;
 }
 
+.country-container{
+  border: none;
+  box-shadow: 3px 3px 6px #eee;
+}
+
+.country-details {
+  width: 15vw;
+  height: 10vw;
+}
+
 /* //Dark Theme
 /* @media (prefers-color-scheme: dark) {
   html,

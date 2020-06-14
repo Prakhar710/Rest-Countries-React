@@ -1,4 +1,4 @@
-import { createGlobalStyle} from "styled-components"
+import { createGlobalStyle } from "styled-components";
 
 export const GlobalStyles = createGlobalStyle`
   body {
@@ -29,10 +29,10 @@ export const GlobalStyles = createGlobalStyle`
     transition: all 0.50s linear;
   }
 
-  `
+  `;
 
-  // font-family: Tahoma, Helvetica, Arial, Roboto, sans-serif;
-  // .search-wrapper,.search-bar,.filter-wrapper{
-  //   color: ${({ theme }) => theme.text};
-  //   background: ${({ theme }) => theme.body};
-  // }
+// font-family: Tahoma, Helvetica, Arial, Roboto, sans-serif;
+// .search-wrapper,.search-bar,.filter-wrapper{
+//   color: ${({ theme }) => theme.text};
+//   background: ${({ theme }) => theme.body};
+// }
